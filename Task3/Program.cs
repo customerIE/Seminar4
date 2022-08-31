@@ -4,10 +4,11 @@
 Console.WriteLine("Введите размер массива 'интересных' чисел : ");
 int N  = Convert.ToInt32(Console.ReadLine());
 int [] inter_ar = new int [N];
+int j = 0;
 // Цикл заполнения элементов 'интересного' массива.
-for (int j=0; j<N; j++)
-{
-    for (int k=22; k<32; k++)
+//for (int j=0; j<N; j++)
+//{
+    for (int k=22; k<50; k++)
     {
         int index = 0;
         int digit = 0;
@@ -51,14 +52,15 @@ for (int j=0; j<N; j++)
         //Исключаем деление на 0.
         if (sum !=0)
         {
-            if (counts%sum == 0)
+            if ((counts%sum == 0) && (j != N))
             {
                 inter_ar[j] = number;
+                j++;
             }
         }
     }
 //Конец цикла for j.
-}
+//}
 Console.WriteLine("Массив интересных чисел: ");
 for (int i = 0; i < N; i++)
 {
